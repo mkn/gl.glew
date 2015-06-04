@@ -12,9 +12,14 @@ See ./license.txt
 -->
 <?xml version="1.0" encoding="UTF-8" ?>
 <maiken>
+	<properties>
+		<github>http://www.github.com/Dekken</github>
+		<git>${github}/gl.glew.git</git>
+	</properties>
 	<project>
 		<name>gl.glew</name>
 		<version>master</version>
+		<scr scm="git">${git}</scr>
 	</project>
 
 	<includes>
@@ -27,9 +32,10 @@ See ./license.txt
 		<dependency>
 			<name>gl.gl</name>
 			<version>master</version>
+			<scr scm="git">${github}/gl.gl.git</scr>
 		</dependency>
 	</dependencies>
-	<build type="lib" mode="static" lang="c"> 
+	<build type="lib" lang="c"> 
 		<files>
 			<file type="c">
 				<args><arg>-DGLEW_STATIC</arg></args>
