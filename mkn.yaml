@@ -1,0 +1,21 @@
+
+
+name: gl.glew
+version: master
+properties:
+    github: http://www.github.com/Dekken
+scm:
+    type: git
+    remote: ${github}/gl.glew.git
+
+include: ./include
+source:  ./src
+dependencies:
+  - name: gl.gl
+    version: master
+    scm:
+        type: git
+        remote: ${github}/gl.gl.git
+
+lang: c
+args: -DGLEW_STATIC
