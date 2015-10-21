@@ -3,15 +3,15 @@
 name: gl.glew
 version: master
 properties:
-    github: http://www.github.com/Dekken
-scm: ${github}/gl.glew.git
+    github: http://www.github.com
+scm: ${github}/Dekken/gl.glew.git
 
 include: ./include
 source:  ./src
 dependencies:
   - name: gl.gl
     version: master
-    scm: ${github}/gl.gl.git
+    scm:  ${github}/rant/khronos.OpenGL.git
 
 lang: c
 args: -DGLEW_STATIC
