@@ -9,9 +9,8 @@ scm: ${github}/Dekken/gl.glew.git
 include: ./include
 source:  ./src
 dependencies:
-  - name: gl.gl
+  - name: khronos.OpenGL
     version: master
     scm:  ${github}/rant/khronos.OpenGL.git
 
 lang: c
-args: -DGLEW_STATIC
