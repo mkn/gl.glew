@@ -6,11 +6,25 @@ properties:
     github: http://www.github.com
 scm: ${github}/Dekken/gl.glew.git
 
-include: ./include
-source:  ./src
-dependencies:
-  - name: khronos.OpenGL
-    version: master
-    scm:  ${github}/rant/khronos.OpenGL.git
-
-lang: c
+profiles:
+  - name: c
+    include: ./include
+    source:  ./src
+    dependencies:
+      - name: gl.gl
+        version: master
+        scm:  ${github}/rant/khronos.OpenGL.git
+    lang: c
+  - name: bsd
+    parent: c
+    os: bsd
+  - name: nix
+    parent: c
+    os: nix
+  - name: win
+    parent: c
+    os: win
+    library: Shell32 User32 Gdi32 Xinput
+    if_args:
+        shared: -DGLEW_BUILD -DGLEWAPI
+        static: -DGLEW_STATIC
