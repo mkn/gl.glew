@@ -11,7 +11,7 @@ profiles:
     include: ./include
     source:  ./src
     dependencies:
-      - name: gl.gl
+      - name: khronos.OpenGL
         version: master
         scm:  ${github}/rant/khronos.OpenGL.git
     lang: c
