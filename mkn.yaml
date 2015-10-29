@@ -2,9 +2,6 @@
 
 name: gl.glew
 version: master
-properties:
-    github: http://www.github.com
-scm: ${github}/Dekken/gl.glew.git
 
 profiles:
   - name: c
@@ -13,7 +10,7 @@ profiles:
     dependencies:
       - name: khronos.OpenGL
         version: master
-        scm:  ${github}/rant/khronos.OpenGL.git
+        scm: http://www.github.com/mkn/khronos.OpenGL.git
     lang: c
   - name: bsd
     parent: c
