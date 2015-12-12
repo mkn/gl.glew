@@ -3,25 +3,15 @@
 name: gl.glew
 version: master
 
-profiles:
-  - name: c
-    include: ./include
-    source:  ./src
-    dependencies:
-      - name: khronos.OpenGL
-        version: master
-        scm: http://www.github.com/mkn/khronos.OpenGL.git
-    lang: c
-  - name: bsd
-    parent: c
-    os: bsd
-  - name: nix
-    parent: c
-    os: nix
-  - name: win
-    parent: c
-    os: win
-    library: Shell32 User32 Gdi32 Xinput
-    if_args:
-        shared: -DGLEW_BUILD -DGLEWAPI
-        static: -DGLEW_STATIC
+inc: ./include
+src: ./src
+dep:
+  - name: khronos.OpenGL
+    version: master
+    scm: http://www.github.com/mkn/khronos.OpenGL.git
+if_lib:
+    win: Shell32 User32 Gdi32 Xinput
+if_arg:
+    win_shared: -DGLEW_BUILD -DGLEWAPI
+    win_static: -DGLEW_STATIC
+lang: c
