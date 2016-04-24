@@ -8,7 +8,6 @@ src: ./src
 dep:
   - name: khronos.OpenGL
     version: master
-    scm: http://www.github.com/mkn/khronos.OpenGL.git
 if_lib:
     win: Shell32 User32 Gdi32 Xinput
 if_arg:
