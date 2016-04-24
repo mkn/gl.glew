@@ -1,7 +1,6 @@
 
 
 name: gl.glew
-version: master
 
 inc: ./include
 src: ./src
