@@ -1,15 +1,16 @@
-
-
 name: gl.glew
 
-inc: ./include
-src: ./src
-dep:
-  - name: khronos.OpenGL
-    version: master
-if_lib:
+super: ver
+
+parent: base
+src: glew-${gl.glew.version}/src/glew.c
+
+profile:
+- name: base
+  inc: glew-${gl.glew.version}/include
+  dep: khronos.OpenGL
+  if_lib:
     win: Shell32 User32 Gdi32 Xinput
-if_arg:
+  if_arg:
     win_shared: -DGLEW_BUILD -DGLEWAPI
     win_static: -DGLEW_STATIC
-lang: c
