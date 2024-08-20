@@ -1,0 +1,4 @@
+name: gl.glew.version
+
+property:
+    gl.glew.version: 2.2.0
