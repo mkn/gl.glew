@@ -8,7 +8,7 @@ src: glew-${gl.glew.version}/src/glew.c
 profile:
 - name: base
   inc: glew-${gl.glew.version}/include
-  dep: khronos.OpenGL
+  dep: gl.glu
   if_lib:
     win: Shell32 User32 Gdi32 Xinput
   if_arg:
