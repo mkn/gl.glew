@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 set -exu
 
-# [ ! -d "g" ] && git clone https://github.com/nigels-com/glew g
-
-VER="$(mkn -G gl.glew.version -C ver)"
+VER="$(mkn -G gl.glew.version -C mkn.prop.yaml)"
 DIR="glew-${VER}"
 FILE="${DIR}.tgz"
 

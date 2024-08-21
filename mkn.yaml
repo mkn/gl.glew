@@ -1,16 +1,20 @@
 name: gl.glew
-
-super: ver
-
-parent: base
-src: glew-${gl.glew.version}/src/glew.c
+parent: lib
+super: mkn.prop.yaml
 
 profile:
 - name: base
   inc: glew-${gl.glew.version}/include
-  dep: gl.glu
-  if_lib:
-    win: Shell32 User32 Gdi32 Xinput
   if_arg:
     win_shared: -DGLEW_BUILD -DGLEWAPI
     win_static: -DGLEW_STATIC
+
+- name: lib
+  parent: base
+  src: glew-${gl.glew.version}/src/glew.c
+
+- name: dep
+  parent: lib
+  dep: gl.glu
+  if_lib:
+    win: Shell32 User32 Gdi32 Xinput
