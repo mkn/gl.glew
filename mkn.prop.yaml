@@ -1,4 +1,4 @@
-name: gl.glew.version
+name: gl.glew.props
 
 property:
     gl.glew.version: 2.2.0
