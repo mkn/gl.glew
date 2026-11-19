@@ -4,6 +4,10 @@ name: Build on Ubuntu
 on:
   pull_request:
 
+env:
+  CURL_GET: curl -fL --retry 3 --retry-delay 2
+  PATH_GET: https://github.com/mkn/mkn/releases/download/latest
+
 jobs:
   build:
     name: Ubuntu
@@ -14,9 +18,9 @@ jobs:
       with:
         submodules: true
 
-    # sudo apt update && sudo apt install -y libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev
     - run: |
-        curl -Lo mkn https://github.com/mkn/mkn/releases/download/latest/mkn_nix
+        sudo apt-get update && sudo apt-get install -y libx11-dev libgl-dev
+        $CURL_GET -o mkn ${PATH_GET}/mkn_nix
         chmod +x mkn
         PATH="$PWD:$PATH" ./mkn.sh
         ./mkn clean build -dtOa -fPIC -p dep
