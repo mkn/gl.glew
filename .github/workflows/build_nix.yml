@@ -18,8 +18,8 @@ jobs:
       with:
         submodules: true
 
-    # sudo apt update && sudo apt install -y libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev
     - run: |
+        sudo apt-get update && sudo apt-get install -y libx11-dev libgl-dev
         $CURL_GET -o mkn ${PATH_GET}/mkn_nix
         chmod +x mkn
         PATH="$PWD:$PATH" ./mkn.sh
